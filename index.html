@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuilhermeMBS - Francês</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Treino de Francês</h1>
+
+        <div id="file-section" class="card">
+            <div class="option-group">
+                <label for="list-select">Escolha uma lista pré-carregada:</label>
+                <select id="list-select">
+                    <option value="">-- Selecione uma lista --</option>
+                    <option value="connecteurs">Conectores de Frases (B1)</option>
+                    <option value="adverbes">Advérbios de Frequência & Tempo</option>
+                    <option value="frequence_1">Verbos - Nível Essencial</option>
+                </select>
+            </div>
+
+            <div class="divider">ou</div>
+
+            <div class="option-group">
+                <label for="file-input">Carregue seu arquivo .txt:</label>
+                <input type="file" id="file-input" accept=".txt,.tsv,.csv">
+                <p><br>Formato do txt lido: frente [TAB] verso [ENTER]</p>
+            </div>
+        </div>
+
+        <div id="quiz-section" class="card hidden">
+            <div class="header-nav">
+                <button type="button" id="btn-home" class="btn-secondary">← Início</button>
+                <div class="stats">
+                    Restantes na fila: <strong id="cards-left">0</strong>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <span id="prompt-text">Carregando...</span>
+            </div>
+
+            <form id="quiz-form">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Digite exatamente em francês..." 
+                    autocomplete="off" 
+                    autocorrect="off" 
+                    autocapitalize="off" 
+                    spellcheck="false"
+                >
+                <button type="submit" id="btn-submit">Checar</button>
+            </form>
+
+            <div id="feedback" class="feedback-box hidden">
+                <div id="feedback-text"></div>
+                <button type="button" id="btn-next" class="btn-advance">Avançar (Enter)</button>
+            </div>
+
+            <div id="completion-box" class="hidden">
+                <p>🎉 Félicitations! Vous avez complété toutes les cartes de la liste!</p>
+                <button id="btn-restart" type="button">Voltar ao Início</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
