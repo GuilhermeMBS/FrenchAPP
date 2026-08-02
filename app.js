@@ -1,13 +1,15 @@
-// --- PRE-LOADED BUILT-IN LISTS ---
+// --- MAP PRE-LOADED MODULE LISTS ---
 const BUILTIN_LISTS = {
-    connecteurs: `com certeza\tbien sûr\nem vão\ten vain\nde fato\tbel et bien\nalém disso\ten plus\nno entanto\tcependant\ncontudo\tpourtant\nembora\tbien que`,
-    adverbes: `para sempre\tà jamais\nno horário\tà l'heure\nagora\tà présent\na tempo\tà temps\ncedo\ten avance\tatrasado\ten retard`,
-    frequence_1: `eu sou / estou\tje suis\ntu és / estás\ttu es\tele é / está\til est\tela é / está\telle est`
+    adverbes: typeof adverbesList !== 'undefined' ? adverbesList : '',
+    connecteurs: typeof connecteursList !== 'undefined' ? connecteursList : '',
+    connecteurs_a1_b1: typeof connecteursA1B1List !== 'undefined' ? connecteursA1B1List : '',
+    frequence_1: typeof frequence1List !== 'undefined' ? frequence1List : ''
 };
 
+
 // --- APPLICATION STATE ---
-let queue = [];           // Queue array for active study session
-let currentCard = null;   // Active card under evaluation
+let queue = [];               // Queue array for active study session
+let currentCard = null;       // Active card under evaluation
 let isWaitingForNext = false; // Flag to manage manual pause on error/success
 
 // --- DOM ELEMENTS ---

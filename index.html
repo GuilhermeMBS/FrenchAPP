@@ -15,8 +15,9 @@
                 <label for="list-select">Escolha uma lista pré-carregada:</label>
                 <select id="list-select">
                     <option value="">-- Selecione uma lista --</option>
-                    <option value="connecteurs">Conectores de Frases (B1)</option>
                     <option value="adverbes">Advérbios de Frequência & Tempo</option>
+                    <option value="connecteurs">Conectores de Frases (Teste)</option>
+                    <option value="connecteurs_a1_b1">Conectores de Frases (A1 a B1)</option>
                     <option value="frequence_1">Verbos - Nível Essencial</option>
                 </select>
             </div>
@@ -24,9 +25,8 @@
             <div class="divider">ou</div>
 
             <div class="option-group">
-                <label for="file-input">Carregue seu arquivo .txt:</label>
+                <label for="file-input">Carregue seu arquivo .txt (frente [TAB] verso [ENTER]):</label>
                 <input type="file" id="file-input" accept=".txt,.tsv,.csv">
-                <p><br>Formato do txt lido: frente [TAB] verso [ENTER]</p>
             </div>
         </div>
 
@@ -66,6 +66,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Insert new lists here -->
+    <script src="lists/adverbes.js"></script>
+    <script src="lists/connecteursA1B1.js"></script>
+    <script src="lists/connecteurs.js"></script>
+    <script src="lists/frequence_1.js"></script>
 
     <script src="app.js"></script>
 </body>
