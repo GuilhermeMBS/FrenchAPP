@@ -1,7 +1,7 @@
 // --- LIST: ADVERBS & EXPRESSIONS ---
 const adverbesList = `para sempre\tà jamais
-no horário\tà l'heure
-agora\tà présent
+na hora\tà l'heure
+no presente\tà présent
 a tempo\tà temps
 primeiro\td'abord
 cedo\ten avance
@@ -13,21 +13,21 @@ em frente\ten face
 no alto\ten haut
 lá longe\tlà-bas
 no local\tsur place
-confortavelmente\tà l'aise
-amigavelmente\tà l'amiable
+à vontade\tà l'aise
+de forma amigável\tà l'amiable
 às cegas\tà l'aveugle
-perfeitamente\tà merveille
+às mil maravilhas\tà merveille
 em silêncio\ten silence
 em vão\ten vain
-de cor\tpar cœur
-quase nada\tà peine
+de cor\tpar coeur
+mal (mal aconteceu)\tà peine
 aproximadamente\tà peu près
-pelo menos\tau moins
+ao menos\tau moins
 de fato\tbel et bien
 além disso\ten plus
 mais ou menos\tplus ou moins
 completamente\ttout à fait
-para ser sincero\tà vrai dire
+para dizer a verdade\tà vrai dire
 com certeza\tbien sûr
 em geral\ten général
 na realidade\ten réalité

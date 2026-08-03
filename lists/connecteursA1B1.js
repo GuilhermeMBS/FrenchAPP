@@ -2,7 +2,7 @@
 const connecteursA1B1List = 
 `então\talors
 também\taussi
-primeiro\td'abord
+de início\td'abord
 portanto\tdonc
 e\tet
 mas\tmais
@@ -13,17 +13,17 @@ quando\tquand
 pois\tcar
 como\tcomme
 além disso\ten plus
-finalmente\tenfin
+enfim\tenfin
 ou então\tou bien
 por exemplo\tpar exemple
 senão\tsinon
-enquanto\talors que
+enquanto que\talors que
 em resumo\tbref
 assim que\tdès que
-por causa disso\tdu coup
+por isso\tdu coup
 na verdade\ten fait
 é verdade que\til est vrai que
-quando quer que\tlorsque
+logo que\tlorsque
 pelo contrário\tpar contre
 para que\tpour que
 visto que\tvu que

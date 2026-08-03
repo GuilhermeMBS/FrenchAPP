@@ -16,6 +16,7 @@
                 <select id="list-select">
                     <option value="">-- Selecione uma lista --</option>
                     <option value="adverbes">Advérbios de Frequência & Tempo</option>
+                    <option value="connecteurs_a1_b1_phrases">Aplicação dos Conectores de Frases (A1 a B1)</option>
                     <option value="connecteurs">Conectores de Frases (Teste)</option>
                     <option value="connecteurs_a1_b1">Conectores de Frases (A1 a B1)</option>
                     <option value="frequence_1">Verbos - Nível Essencial</option>
@@ -43,15 +44,24 @@
             </div>
 
             <form id="quiz-form">
-                <input 
-                    type="text" 
-                    id="user-input" 
-                    placeholder="Digite exatamente em francês..." 
-                    autocomplete="off" 
-                    autocorrect="off" 
-                    autocapitalize="off" 
-                    spellcheck="false"
-                >
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="Digite ou fale em francês..." 
+                        autocomplete="off" 
+                        autocorrect="off" 
+                        autocapitalize="off" 
+                        spellcheck="false"
+                    >
+                    <button type="button" id="btn-mic" title="Falar em francês">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="22"></line>
+                        </svg>
+                    </button>
+                </div>
                 <button type="submit" id="btn-submit">Checar</button>
             </form>
 
@@ -69,8 +79,9 @@
 
     <!-- Insert new lists here -->
     <script src="lists/adverbes.js"></script>
-    <script src="lists/connecteursA1B1.js"></script>
     <script src="lists/connecteurs.js"></script>
+    <script src="lists/connecteursA1B1.js"></script>
+    <script src="lists/connecteursA1B1phrases.js"></script>
     <script src="lists/frequence_1.js"></script>
 
     <script src="app.js"></script>

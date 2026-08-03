@@ -96,7 +96,15 @@ select {
 
 #quiz-form {
     display: flex;
+    flex-direction: column;
     gap: 10px;
+}
+
+.input-container {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    width: 100%;
 }
 
 #user-input {
@@ -110,6 +118,26 @@ select {
 
 #user-input:focus {
     border-color: #3498db;
+}
+
+#btn-mic {
+    background-color: #3498db;
+    padding: 0 15px;
+    font-size: 1.1rem;
+}
+
+#btn-mic:hover {
+    background-color: #2980b9;
+}
+
+#btn-mic.recording {
+    background-color: #e74c3c;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
 }
 
 button {
