@@ -276,6 +276,22 @@ button:hover {
     background-color: #219653;
 }
 
+.feedback-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+}
+
+#btn-override {
+    background-color: #f39c12;
+    color: white;
+}
+
+#btn-override:hover {
+    background-color: #d68910;
+}
+
 #completion-box {
     text-align: center;
     margin-top: 20px;

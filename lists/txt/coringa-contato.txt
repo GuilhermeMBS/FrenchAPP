@@ -1,0 +1,7 @@
+Abertura padrão desejando que tudo esteja bem	J'espère que tu vas bien et que tout se passe pour le mieux de ton côté.
+Anunciar uma grande novidade pessoal	Je t'écris aujourd'hui parce que j'ai une grande nouvelle à t'annoncer:
+Agradecer calorosamente um convite recebido	Je te remercie infiniment pour ton invitation, cela m'a fait énormément plaisir!
+Recusar um convite com pesar educado	Merci pour ton invitation, mais j'ai le regret de t'annoncer que je ne pourrai pas venir.
+Confirmar recebimento de mensagem com entusiasmo	J'ai bien reçu ton message et je suis ravi d'apprendre cette nouvelle.
+Pedir atualização rápida no encerramento	Tiens-moi vite au courant!
+Despedida amigável padrão de prova	À très bientôt,

@@ -99,9 +99,10 @@ const feedbackText = document.getElementById('feedback-text');
 const btnNext = document.getElementById('btn-next');
 const btnHome = document.getElementById('btn-home');
 const btnMic = document.getElementById('btn-mic');
+const btnRestart = document.getElementById('btn-restart');
+const btnOverride = document.getElementById('btn-override');
 const cardsLeft = document.getElementById('cards-left');
 const completionBox = document.getElementById('completion-box');
-const btnRestart = document.getElementById('btn-restart');
 
 const mainMenu = document.getElementById('main-menu');
 const delfB1Menu = document.getElementById('delf-b1-menu');
@@ -270,6 +271,8 @@ quizForm.addEventListener('submit', (e) => {
         queue.shift();
         isWaitingForNext = true;
         quizForm.classList.add('hidden');
+        
+        btnOverride.classList.add('hidden');
 
         feedbackText.innerHTML = `<strong>Correto!</strong><br>Resposta: <strong>${currentCard.back}</strong>`;
         feedback.className = 'feedback-box correct';
@@ -282,6 +285,8 @@ quizForm.addEventListener('submit', (e) => {
 
         isWaitingForNext = true;
         quizForm.classList.add('hidden');
+        
+        btnOverride.classList.remove('hidden');
 
         const displayTyped = userTyped ? `<code>${userTyped}</code>` : '<em>(Vazio)</em>';
         feedbackText.innerHTML = `<strong>Incorreto!</strong><br>Você digitou: ${displayTyped}<br>Resposta correta: <strong>${currentCard.back}</strong>`;
@@ -292,8 +297,9 @@ quizForm.addEventListener('submit', (e) => {
     }
 });
 
-btnNext.addEventListener('click', () => {
+btnOverride.addEventListener('click', () => {
     if (isWaitingForNext) {
+        queue.pop();
         nextCard();
     }
 });
