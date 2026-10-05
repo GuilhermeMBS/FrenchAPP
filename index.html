@@ -11,32 +11,71 @@
         <h1>Treino de Francês</h1>
 
         <div id="file-section" class="card">
-            <div class="option-group">
-                <label for="list-select">Escolha uma lista pré-carregada:</label>
-                <select id="list-select">
-                    <option value="">-- Selecione uma lista --</option>
-                    <option value="adverbes">Advérbios de Frequência & Tempo</option>
-                    <option value="connecteurs_a1_b1_phrases">Aplicação dos Conectores de Frases (A1 a B1)</option>
-                    <option value="connecteurs">Conectores de Frases (Teste)</option>
-                    <option value="connecteurs_a1_b1">Conectores de Frases (A1 a B1)</option>
-                    <option value="frequence_1">Verbos - Nível Essencial</option>
-                </select>
+            <!-- Menu Principal -->
+            <div id="main-menu">
+                <div class="option-group">
+                    <label for="list-select">Escolha uma lista pré-carregada:</label>
+                    <select id="list-select">
+                        <option value="">-- Selecione uma lista --</option>
+                        <option value="adverbes">Advérbios de Frequência & Tempo</option>
+                        <option value="connecteurs_a1_b1_phrases">Aplicação dos Conectores de Frases (A1 a B1)</option>
+                        <option value="connecteurs">Conectores de Frases (Teste)</option>
+                        <option value="connecteurs_a1_b1">Conectores de Frases (A1 a B1)</option>
+                        <option value="frequence_1">Verbos - Nível Essencial</option>
+                    </select>
+                </div>
+
+                <div class="divider">ou</div>
+
+                <div class="option-group">
+                    <label for="file-input">Carregue seu arquivo .txt (frente [TAB] verso [ENTER]):</label>
+                    <input type="file" id="file-input" accept=".txt,.tsv,.csv">
+                </div>
+                
+                <div class="divider">delf b1</div>
+                
+                <button type="button" id="btn-delf-b1">Estudo de Production Écrite</button>
             </div>
 
-            <div class="divider">ou</div>
+            <!-- Menu DELF B1 (Oculto por padrão) -->
+            <div id="delf-b1-menu" class="hidden">
+                <h2 class="delf-title">Production Écrite</h2>
+                
+                <!-- Seletor de Formalidade -->
+                <div class="formality-toggle">
+                    <label class="radio-label">
+                        <input type="radio" name="register" value="informal" checked>
+                        Informal (Tu)
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="register" value="formal">
+                        Formal (Vous)
+                    </label>
+                </div>
 
-            <div class="option-group">
-                <label for="file-input">Carregue seu arquivo .txt (frente [TAB] verso [ENTER]):</label>
-                <input type="file" id="file-input" accept=".txt,.tsv,.csv">
+                <div class="delf-b1-buttons">
+                    <button type="button" class="btn-delf" data-list="core-grammar" data-title="Gramática (Estruturas)">Gramática (Estruturas)</button>
+                    <button type="button" class="btn-delf" data-list="core-connectors" data-title="Conectivos (Lógica)">Conectivos (Lógica)</button>
+                    <button type="button" class="btn-delf" data-list="format-email" data-title="Formato E-mail">Formato E-mail</button>
+                    <button type="button" class="btn-delf" data-list="format-letter" data-title="Formato Carta">Formato Carta</button>
+                    <button type="button" class="btn-delf" data-list="format-forum" data-title="Formato Fórum">Formato Fórum</button>
+                </div>
+                <button type="button" id="btn-back-main" class="btn-secondary">← Voltar ao Menu Principal</button>
             </div>
         </div>
 
         <div id="quiz-section" class="card hidden">
             <div class="header-nav">
-                <button type="button" id="btn-home" class="btn-secondary">← Início</button>
+                <button type="button" id="btn-home" class="btn-secondary">← Voltar</button>
                 <div class="stats">
                     Restantes na fila: <strong id="cards-left">0</strong>
                 </div>
+            </div>
+
+            <!-- Título Dinâmico da Lista Atual -->
+            <div id="quiz-header" class="hidden">
+                <h2 id="quiz-title">Título</h2>
+                <h3 id="quiz-subtitle">Subtítulo</h3>
             </div>
 
             <div class="prompt-box">
@@ -71,19 +110,25 @@
             </div>
 
             <div id="completion-box" class="hidden">
-                <p>🎉 Félicitations! Vous avez complété toutes les cartes de la liste!</p>
+                <p>🎉 Félicitations! Você completou todos os cards desta lista!</p>
                 <button id="btn-restart" type="button">Voltar ao Início</button>
             </div>
         </div>
     </div>
 
-    <!-- Insert new lists here -->
+    <!-- Listas Padrão -->
     <script src="lists/adverbes.js"></script>
     <script src="lists/connecteurs.js"></script>
     <script src="lists/connecteursA1B1.js"></script>
     <script src="lists/connecteursA1B1phrases.js"></script>
     <script src="lists/frequence_1.js"></script>
 
+    <!-- Listas DELF B1 -->
+    <script src="delf-b1/conectivos.js"></script>
+    <script src="delf-b1/formato_email.js"></script>
+    <script src="delf-b1/gramatica.js"></script>
+
+    <!-- Script Principal -->
     <script src="app.js"></script>
 </body>
 </html>
