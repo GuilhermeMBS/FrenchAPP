@@ -1,0 +1,5 @@
+- deixar caixa vermelha e colocar resposta correta em baixo
+- colocar ícone de ditado (invés de automático, deixar manual)
+- clicar no forçar resposta deve emitir som de certo
+
+----------------------------------------------------------------------------

@@ -4,7 +4,7 @@ const BUILTIN_LISTS = {
     connecteurs: typeof connecteursList !== 'undefined' ? connecteursList : '',
     connecteurs_a1_b1: typeof connecteursA1B1List !== 'undefined' ? connecteursA1B1List : '',
     connecteurs_a1_b1_phrases: typeof connecteursA1B1PhrasesList !== 'undefined' ? connecteursA1B1PhrasesList : '',
-    frequence_1: typeof frequence1List !== 'undefined' ? frequence1List : ''
+    commonVerbes: typeof commonVerbesList !== 'undefined' ? commonVerbesList : ''
 };
 
 // --- MAP DELF B1 LISTS (Nested by Register: informal / formal) ---
