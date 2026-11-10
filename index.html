@@ -11,7 +11,7 @@
         <h1>Treino de Francês</h1>
 
         <div id="file-section" class="card">
-            <!-- Menu Principal -->
+            <!-- Main Menu -->
             <div id="main-menu">
                 <div class="option-group">
                     <label for="list-select">Escolha uma lista pré-carregada:</label>
@@ -33,16 +33,19 @@
                     <input type="file" id="file-input" accept=".txt,.tsv,.csv">
                 </div>
                 
-                <div class="divider">delf b1</div>
+                <div class="divider">modos especiais</div>
                 
-                <button type="button" id="btn-delf-b1">Estudo de Production Écrite</button>
+                <div class="special-modes-group">
+                    <button type="button" id="btn-delf-b1">Estudo de Production Écrite (DELF B1)</button>
+                    <button type="button" id="btn-category-mode">Treino por Sentido (Conectores & Advérbios)</button>
+                </div>
             </div>
 
-            <!-- Menu DELF B1 (Oculto por padrão) -->
+            <!-- DELF B1 Menu -->
             <div id="delf-b1-menu" class="hidden">
                 <h2 class="delf-title">Production Écrite</h2>
                 
-                <!-- Seletor de Formalidade -->
+                <!-- Formality Selector -->
                 <div class="formality-toggle">
                     <label class="radio-label">
                         <input type="radio" name="register" value="informal" checked>
@@ -63,6 +66,43 @@
                 </div>
                 <button type="button" id="btn-back-main" class="btn-secondary">← Voltar ao Menu Principal</button>
             </div>
+
+            <!-- Category Recall Menu -->
+            <div id="category-menu" class="hidden">
+                <h2 class="delf-title">Conectores & Advérbios por Sentido</h2>
+
+                <div class="category-settings-grid">
+                    <div class="option-group">
+                        <label for="category-target-select">Meta por bloco:</label>
+                        <select id="category-target-select">
+                            <option value="3" selected>3 termos por categoria</option>
+                            <option value="5">5 termos por categoria</option>
+                            <option value="all">Todos os termos da categoria</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label for="category-error-limit-select">Limite de erros na partida:</label>
+                        <select id="category-error-limit-select">
+                            <option value="3" selected>Até 3 erros (Mini-game)</option>
+                            <option value="5">Até 5 erros</option>
+                            <option value="1">Apenas 1 erro (Morte Súbita)</option>
+                            <option value="unlimited">Sem limite (Ignorar erros)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="delf-b1-buttons">
+                    <button type="button" id="btn-category-all" class="btn-category-highlight">🔥 Treinar Todas as Categorias (Fila Completa)</button>
+                    <button type="button" class="btn-category" data-category="addition">Adição & Enumeração</button>
+                    <button type="button" class="btn-category" data-category="opposition">Oposição & Concessão</button>
+                    <button type="button" class="btn-category" data-category="cause">Causa & Justificativa</button>
+                    <button type="button" class="btn-category" data-category="consequence">Consequência & Conclusão</button>
+                    <button type="button" class="btn-category" data-category="time">Tempo & Frequência</button>
+                    <button type="button" class="btn-category" data-category="manner">Modo, Intensidade & Nuance</button>
+                </div>
+                <button type="button" id="btn-back-from-category" class="btn-secondary">← Voltar ao Menu Principal</button>
+            </div>
         </div>
 
         <div id="quiz-section" class="card hidden">
@@ -73,7 +113,7 @@
                 </div>
             </div>
 
-            <!-- Título Dinâmico da Lista Atual -->
+            <!-- Dynamic Quiz Header -->
             <div id="quiz-header" class="hidden">
                 <h2 id="quiz-title">Título</h2>
                 <h3 id="quiz-subtitle">Subtítulo</h3>
@@ -81,6 +121,16 @@
 
             <div class="prompt-box">
                 <span id="prompt-text">Carregando...</span>
+            </div>
+
+            <!-- Category Mode Progress Tracker -->
+            <div id="category-progress-box" class="category-progress-box hidden">
+                <div class="category-progress-header">
+                    <span>Acertos no bloco: <strong id="category-progress-count">0 / 3</strong></span>
+                    <span class="error-counter-badge">Erros: <strong id="category-error-count">0 / 3</strong></span>
+                </div>
+                <div id="category-status-msg" class="category-status-msg"></div>
+                <div id="category-found-chips" class="category-chips-container"></div>
             </div>
 
             <form id="quiz-form">
@@ -114,13 +164,17 @@
             </div>
 
             <div id="completion-box" class="hidden">
-                <p>🎉 Félicitations! Você completou todos os cards desta lista!</p>
-                <button id="btn-restart" type="button">Voltar ao Início</button>
+                <p id="completion-message" class="completion-win">🎉 Félicitations! Você completou todos os cards desta lista!</p>
+                <div id="session-summary-box" class="session-summary-box hidden"></div>
+                <div class="completion-actions">
+                    <button id="btn-retry-session" type="button" class="btn-retry">Jogar Novamente</button>
+                    <button id="btn-restart" type="button">Voltar ao Início</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Listas Padrão -->
+    <!-- Standard Pre-loaded Lists -->
     <script src="lists/adverbes.js"></script>
     <script src="lists/connecteurs.js"></script>
     <script src="lists/connecteursA1B1.js"></script>
@@ -128,12 +182,12 @@
     <script src="lists/commonVerbes.js"></script>
     <script src="lists/adjectives.js"></script>
 
-    <!-- Listas DELF B1 -->
+    <!-- DELF B1 Lists -->
     <script src="delf-b1/conectivos.js"></script>
     <script src="delf-b1/formato_email.js"></script>
     <script src="delf-b1/gramatica.js"></script>
 
-    <!-- Script Principal -->
+    <!-- Main Application Script -->
     <script src="app.js"></script>
 </body>
 </html>

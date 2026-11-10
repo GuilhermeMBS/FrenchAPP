@@ -41,14 +41,25 @@ h1 {
 .option-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+}
+
+.category-settings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
 }
 
 select {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 1rem;
+    font-size: 0.95rem;
     outline: none;
     background-color: #fff;
 }
@@ -62,7 +73,13 @@ select {
     font-size: 0.85rem;
 }
 
-/* DELF B1 Menu Styles */
+.special-modes-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* DELF B1 & Category Menu Styles */
 #btn-delf-b1 {
     width: 100%;
     background-color: #8e44ad; 
@@ -70,6 +87,15 @@ select {
 
 #btn-delf-b1:hover {
     background-color: #732d91;
+}
+
+#btn-category-mode {
+    width: 100%;
+    background-color: #16a085;
+}
+
+#btn-category-mode:hover {
+    background-color: #117a65;
 }
 
 .delf-title {
@@ -105,16 +131,28 @@ select {
     margin-bottom: 15px;
 }
 
-.btn-delf {
+.btn-delf,
+.btn-category {
     background-color: #2c3e50;
     font-size: 0.95rem;
 }
 
-.btn-delf:hover {
+.btn-delf:hover,
+.btn-category:hover {
     background-color: #1a252f;
 }
 
-#btn-back-main {
+.btn-category-highlight {
+    background-color: #16a085;
+    font-size: 0.95rem;
+}
+
+.btn-category-highlight:hover {
+    background-color: #117a65;
+}
+
+#btn-back-main,
+#btn-back-from-category {
     width: 100%;
     margin-top: 5px;
 }
@@ -126,7 +164,7 @@ select {
     margin-bottom: 15px;
 }
 
-/* Quiz Header (Títulos) */
+/* Quiz Header Styles */
 #quiz-header {
     text-align: center;
     margin-bottom: 20px;
@@ -166,9 +204,71 @@ select {
     background-color: #f8f9fa;
     border-left: 4px solid #3498db;
     padding: 15px;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* Category Progress Box Styles */
+.category-progress-box {
+    background-color: #f0faf8;
+    border: 1px solid #a3e4d7;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.category-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #0e6251;
+    margin-bottom: 6px;
+}
+
+.error-counter-badge {
+    background-color: #fde8e8;
+    color: #c81e1e;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+}
+
+.category-status-msg {
+    font-weight: 600;
+    font-size: 0.85rem;
+    min-height: 20px;
+    margin-bottom: 6px;
+}
+
+.category-status-msg.status-ok {
+    color: #27ae60;
+}
+
+.category-status-msg.status-warn {
+    color: #d35400;
+}
+
+.category-status-msg.status-error {
+    color: #c81e1e;
+}
+
+.category-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-height: 28px;
+}
+
+.category-chip {
+    background-color: #27ae60;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 #quiz-form {
@@ -191,10 +291,32 @@ select {
     border: 2px solid #ddd;
     border-radius: 8px;
     outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #user-input:focus {
     border-color: #3498db;
+}
+
+/* Input Visual Flash & Shake Animations for Category Mini-Game */
+#user-input.input-error-flash {
+    border-color: #e74c3c !important;
+    background-color: #fde8e8 !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.25);
+    animation: inputShake 0.35s ease-in-out;
+}
+
+#user-input.input-warn-flash {
+    border-color: #f39c12 !important;
+    background-color: #fef9e7 !important;
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.25);
+    animation: inputShake 0.35s ease-in-out;
+}
+
+@keyframes inputShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
 }
 
 #btn-mic {
@@ -225,6 +347,7 @@ button {
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    touch-action: manipulation;
 }
 
 button:hover {
@@ -297,9 +420,56 @@ button:hover {
     margin-top: 20px;
 }
 
-#completion-box p {
+#completion-message {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #27ae60;
     margin-bottom: 15px;
+}
+
+.completion-win {
+    color: #27ae60;
+}
+
+.completion-lose {
+    color: #c81e1e;
+}
+
+.session-summary-box {
+    text-align: left;
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    max-height: 260px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.summary-category-item {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.summary-category-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.completion-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-retry {
+    background-color: #16a085;
+}
+
+.btn-retry:hover {
+    background-color: #117a65;
 }

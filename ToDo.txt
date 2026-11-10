@@ -1,5 +1,8 @@
 - deixar caixa vermelha e colocar resposta correta em baixo
-- colocar ícone de ditado (invés de automático, deixar manual)
+- colocar ícone de ditado da resposta (invés de automático, deixar manual)
 - clicar no forçar resposta deve emitir som de certo
-
+- Separar os conectores e categorias em outro arquivo, invés de usar o app.js
+- colocar limite de tempo no mini-game
+- mostrar todas as respostas quando termino o mini-game acertando tudo
+- acrescentar conectivos (como c'est pourquoi, dentre outras expressões)
 ----------------------------------------------------------------------------
